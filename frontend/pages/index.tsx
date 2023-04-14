@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
-
+import CardComponent from "@/component/CardComponent";
+import Calendar from "@/component/CalendarComponent";
 const index = () => {
   return (
     <div>
@@ -13,6 +14,13 @@ const index = () => {
       >
         Solid
       </button>
+      <div>
+        <CardComponent value="A"/>
+      </div>
+      <div className="m-10">
+        <Calendar value= "A"/>
+      </div>
+
     </div>
   );
 };
