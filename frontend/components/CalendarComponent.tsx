@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import { useRouter } from "next/router";
 
 const Calendar = (props: any) => {
+  const [active, setActive] = useState(false);
+  const router = useRouter()
   const numbers = Array.from({ length: 31 }, (_, i) => i + 1);
   
   return (
@@ -14,13 +17,16 @@ const Calendar = (props: any) => {
         <p className="flex items-center justify-center h-16 text-white">Friday</p>
         <p className="flex items-center justify-center h-16 text-white">Saturday</p>
       </div>
-      <div className="bg-red-500 w-auto grid grid-cols-7 grid-row-3 gap-1">
-        {numbers.map((n) => (
+      <div className="m-0 p-3 bg-red-500 w-auto grid grid-cols-7 ">
+        {numbers.map((day) => (
           <div
-            key={n}
-            className="py-2.5 inline-block text-center p-5 text-3xl my-4 select-none border border-black rounded-6 font-bold text-black bg-white"
+            key={day}
+            onClick={() => {
+              router.push("/article/" + day) 
+            }}
+            className="m-0 hover:bg-black hover:text-white py-10 inline-block text-center text-3xl my-4 select-none border border-black rounded-6 font-bold text-black bg-white"
           >
-            {n}
+            {day}
           </div>
         ))}
       </div>
