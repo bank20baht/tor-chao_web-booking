@@ -2,8 +2,21 @@ import React from "react";
 
 const CardComponent = (props: any) => {
   return (
-    <div className="inline-block text-center p-3 text-3xl my-4 select-none border border-black rounded-6 font-bold text-black bg-white">
-      {props.value}
+    <div className="card w-100 bg-base-100 shadow-xl">
+      <div className="card-body">
+        <div className="flex flex-row justify-between">
+          <h2 className="card-title m-1">#1</h2>
+          <div>
+            <p className="text-xl">{props.value}</p>
+            <p>date 5 may 2023</p>
+          </div>
+          <div>
+            <button className="btn btn-primary m-1">infomation</button>
+          <button className="btn btn-primary m-1">add document</button>
+          </div>
+          
+        </div>
+      </div>
     </div>
   );
 };
